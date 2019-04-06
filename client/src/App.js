@@ -10,14 +10,14 @@ class App extends Component {
   render() {
     return (
       <>
-<h1 className="logo"> <NavLink to={"/"}>Jamar's dad joke app</NavLink></h1>
+<h1 className="logo"> <NavLink to="/">Jamar's dad joke app</NavLink></h1>
       <header>
         <nav>
-          <NavLink to={"/register"}>Register</NavLink>
+          <NavLink to="/register">Register</NavLink>
           &nbsp; | &nbsp;
-          <NavLink to={"/login"}>Login</NavLink>
+          <NavLink to="/login">Login</NavLink>
           &nbsp; | &nbsp;
-          <NavLink exact to={"/jokes"}>Dad Jokes</NavLink>
+          <NavLink exact to="/jokes">Dad Jokes</NavLink>
           &nbsp; | &nbsp;
           <button onClick={this.logout}>Logout</button>
         </nav>
@@ -32,7 +32,7 @@ class App extends Component {
   }
 
   logout = () => {
-    localStorage.removeItem("jwt");
+    localStorage.removeItem('jwt');
     this.props.history.push('/login');
   };
 }

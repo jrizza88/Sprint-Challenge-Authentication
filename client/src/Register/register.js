@@ -4,7 +4,7 @@ import axios from 'axios';
 class Register extends React.Component {
     state = {
         username: "",
-        password: ""
+        password: "",
     }
 
     render() {
@@ -54,10 +54,10 @@ class Register extends React.Component {
         axios.post(endpoint, this.state)
         .then( res => {
             // localStorage.setItem("jwt", res.data.token)
-            this.props.history.push('/jokes')
+            // this.props.history.push('/jokes')
             console.log('response data: ', res.data)
         }).catch(e => {
-            console.error(e);
+            console.error('error...', e);
         })
     };
 }

@@ -3,6 +3,7 @@ const bcrypt = require('bcryptjs');
 
 
 const { authenticate } = require('../auth/authenticate');
+const Users = require('../model/model');
 
 module.exports = server => {
   server.post('/api/register', register);
@@ -15,10 +16,20 @@ function register(req, res) {
   let user = req.body;
   const hash = bcrypt.hashSync(user.password, 10)
   user.password = hash;
+
+  Users.add(user)
+    .then(saveUser => {
+     
+      res.status(201).json({saveUser})
+    }).catch(error => {
+      res.status(500).json(error)
+    })
+
 }
 
 function login(req, res) {
   // implement user login
+  const token = generateToken(user)
 }
 
 function getJokes(req, res) {

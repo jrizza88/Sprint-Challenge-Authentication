@@ -33,8 +33,8 @@ class App extends Component {
 
   logout = () => {
     localStorage.removeItem("jwt");
-    this.props.history.push('/login')
-  }
+    this.props.history.push('/login');
+  };
 }
 
 export default App;

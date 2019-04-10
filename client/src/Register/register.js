@@ -29,11 +29,12 @@ class Register extends React.Component {
                     value={this.state.password}
                     onChange={this.handleInputChange}
                     type="text"
-                     />     
+                     />  
+                <div className="submit">
+                    <button type="submit">Register User</button>
+                </div>   
             </form>
-            <div className="submit">
-                <button type="submit">Register User</button>
-            </div>
+    
             <div>
                 {this.state.message}
             </div>
